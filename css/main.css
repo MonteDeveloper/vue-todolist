@@ -1,0 +1,11 @@
+.my-toDo:hover{
+    cursor: pointer;
+    opacity: .8;
+}
+.my-toDo:active{
+    scale: .995;
+}
+
+.my-toDo{
+    transition: opacity .2s;
+}
