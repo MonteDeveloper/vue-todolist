@@ -19,10 +19,10 @@
     <div id="app">
         <div class="container p-5">
             <h1 class="text-center">TO DO LIST</h1>
-            <ul class="ps-0" v-for="toDo in toDoList">
+            <ul class="ps-0" v-for="(toDo, i) in toDoList">
                 <li class="d-flex justify-content-between bg-light text-black rounded shadow">
                     <span class="py-2 px-3" :class="{'text-decoration-line-through': toDo.done}">{{toDo.text}}</span>
-                    <button class="btn btn-danger">
+                    <button class="btn btn-danger" @click="removeToDoAtIndex(i)">
                         <i class="fa-solid fa-trash-can"></i>
                     </button>
                 </li>

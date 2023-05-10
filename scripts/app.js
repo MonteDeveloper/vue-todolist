@@ -31,6 +31,8 @@ createApp({
         console.log(this.toDoList);
     },
     methods: {
-        
+        removeToDoAtIndex(toDoIndex){
+            this.toDoList.splice(toDoIndex, 1);
+        }
     }
 }).mount('#app')
