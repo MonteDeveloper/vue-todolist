@@ -24,7 +24,8 @@ createApp({
                     text: "Fare gli auguri a zia Peppina",
                     done: true
                 }
-            ]
+            ],
+            newToDo: ""
         }
     },
     mounted() {
@@ -33,6 +34,14 @@ createApp({
     methods: {
         removeToDoAtIndex(toDoIndex){
             this.toDoList.splice(toDoIndex, 1);
+        },
+        addToDo(newToDoStr){
+            this.toDoList.push(
+                {
+                    text: newToDoStr,
+                    done: false
+                }
+            )
         }
     }
 }).mount('#app')
