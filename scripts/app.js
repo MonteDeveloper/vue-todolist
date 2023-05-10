@@ -29,7 +29,10 @@ createApp({
         }
     },
     mounted() {
-        console.log(this.toDoList);
+        //creo un margine per far partire la mia pagina dopo l'header con fixed top
+        let fixedElement = this.$el.querySelector('.fixed-top');
+        let pageContent = this.$el.querySelector('#page-content');
+        pageContent.style.marginTop = fixedElement.offsetHeight + 'px';
     },
     methods: {
         removeToDoAtIndex(toDoIndex){
