@@ -30,9 +30,8 @@ createApp({
     },
     mounted() {
         //creo un margine per far partire la mia pagina dopo l'header con fixed top
-        let fixedElement = this.$el.querySelector('.fixed-top');
-        let pageContent = this.$el.querySelector('#page-content');
-        pageContent.style.marginTop = fixedElement.offsetHeight + 'px';
+        this.updateMarginTop();
+        window.addEventListener('resize', this.updateMarginTop);
     },
     methods: {
         removeToDoAtIndex(toDoIndex){
@@ -46,6 +45,11 @@ createApp({
                 }
             );
             this.newToDo = "";
+        },
+        updateMarginTop() {
+            var fixedElement = this.$el.querySelector('.fixed-top');
+            var pageContent = this.$el.querySelector('#page-content');
+            pageContent.style.marginTop = fixedElement.offsetHeight + 'px';
         }
     }
 }).mount('#app')
