@@ -5,7 +5,7 @@
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-    <title>TITLE</title>
+    <title>TO DO LIST</title>
 
     <!-- MY CSS - FONT AWESOME - BOOTSTRAP -->
     <link rel="stylesheet" href="./css/main.css">
@@ -17,9 +17,16 @@
 <body class="bg-dark text-white">
     <!-- APP CONTAINER -->
     <div id="app">
-        <div>
-            <ul v-for="toDo in toDoList">
-                <li :class="{'text-decoration-line-through': toDo.done}">{{toDo.text}}</li>
+        <div class="container p-5">
+            <h1 class="text-center">TO DO LIST</h1>
+            <ul class="ps-0" v-for="toDo in toDoList">
+                <li class="d-flex justify-content-between bg-light text-black rounded shadow">
+                    <span class="py-2 px-3" :class="{'text-decoration-line-through': toDo.done}">{{toDo.text}}</span>
+                    <button class="btn btn-danger">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                </li>
+                
             </ul>
         </div>
     </div>
