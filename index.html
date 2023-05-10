@@ -22,10 +22,10 @@
             
             <div class="input-group mb-3">
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="TO DO">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="TO DO" v-model="newToDo" @keyup.enter="addNewToDo()">
                     <label for="floatingInput">Aggiungi una 'TO DO'</label>
                 </div>
-                <button class="btn btn-success" @click="addToDo(newToDo)">
+                <button class="btn btn-success" @click="addNewToDo()">
                     <i class="fa-solid fa-plus"></i>
                 </button>
             </div>

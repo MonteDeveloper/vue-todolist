@@ -35,13 +35,14 @@ createApp({
         removeToDoAtIndex(toDoIndex){
             this.toDoList.splice(toDoIndex, 1);
         },
-        addToDo(newToDoStr){
+        addNewToDo(){
             this.toDoList.push(
                 {
-                    text: newToDoStr,
+                    text: this.newToDo,
                     done: false
                 }
-            )
+            );
+            this.newToDo = "";
         }
     }
 }).mount('#app')
